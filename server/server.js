@@ -13,13 +13,11 @@ mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 45000,
   })
   .then(() => console.log("✔️ Conectado a MongoDB"))
   .catch((err) => console.error("❌ Error MongoDB:", err));
-
-app.get("/", (req, res) => {
-  res.send("Servidor MERN corriendo 🚀");
-});
 
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
