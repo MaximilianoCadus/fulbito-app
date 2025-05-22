@@ -16,7 +16,9 @@ mongoose
     serverSelectionTimeoutMS: 5000,
     socketTimeoutMS: 45000,
   })
-  .then(() => console.log("✔️ Conectado a MongoDB"))
+  .then(() => {
+    console.log("✔️ Conectado a MongoDB");
+  })
   .catch((err) => console.error("❌ Error MongoDB:", err));
 
 app.listen(PORT, () => {
