@@ -12,8 +12,8 @@ const ReservaSchema = new mongoose.Schema({
   fechaHora: {
     fecha: { type: Date, required: true },
     hora: { type: String, required: true },
-    precio: { type: Number, required: true, min: 0 },
   },
+  precioFinal: { type: Number, required: true },
 });
 
 module.exports = mongoose.model("Reserva", ReservaSchema);
